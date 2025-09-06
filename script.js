@@ -1,5 +1,12 @@
+const preloader = document.getElementById('preloader');
+window.addEventListener('load', () => {
+    if (preloader) {
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
-    // --- DYNAMIC HEADER ---
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -9,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- HERO CAROUSEL ---
     const slides = document.querySelectorAll('.slide');
     const indicators = document.querySelectorAll('.indicator');
     const prevButton = document.querySelector('.carousel-arrow-left');
@@ -23,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (lastActiveSlide) {
                 lastActiveSlide.classList.remove('active');
             }
-            
+
             slides.forEach(slide => slide.classList.remove('prev'));
             if (lastActiveSlide) {
                 lastActiveSlide.classList.add('prev');
@@ -54,14 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function startAutoSlide() {
             clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 7000); // Change slide every 7 seconds
+            slideInterval = setInterval(nextSlide, 7000);
         }
 
         function resetAutoSlide() {
             startAutoSlide();
         }
 
-        // Event Listeners for Carousel
         if (nextButton) nextButton.addEventListener('click', () => { previousSlide(); resetAutoSlide(); });
         if (prevButton) prevButton.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
 
@@ -75,17 +80,19 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.hero-carousel').addEventListener('mouseenter', () => clearInterval(slideInterval));
         document.querySelector('.hero-carousel').addEventListener('mouseleave', startAutoSlide);
 
-        // Initialize Carousel
         showSlide(0);
         startAutoSlide();
     }
 
-    // --- SMOOTH SCROLLING FOR ANCHOR LINKS ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
+
+            if (this.classList.contains('modal-contact-btn')) {
+            }
+
             if (targetElement) {
                 const headerOffset = document.querySelector('.header').offsetHeight;
                 const elementPosition = targetElement.getBoundingClientRect().top;
@@ -99,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- SCROLL-BASED ANIMATIONS (Intersection Observer) ---
     const scrollElements = document.querySelectorAll('.animate-on-scroll');
     const elementObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -114,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
         elementObserver.observe(el);
     });
 
-    // --- STATS COUNTER ANIMATION ---
     const statsSection = document.querySelector('#stats');
     const counters = document.querySelectorAll('.counter');
     let hasCounterAnimated = false;
@@ -126,8 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
         counters.forEach(counter => {
             counter.innerText = '0';
             const target = +counter.getAttribute('data-target');
-            const duration = 2000; // 2 seconds
-            const increment = target / (duration / 16); // 60fps
+            const duration = 2000;
+            const increment = target / (duration / 16);
 
             let current = 0;
             const updateCount = () => {
@@ -155,21 +160,33 @@ document.addEventListener('DOMContentLoaded', () => {
         statsObserver.observe(statsSection);
     }
 
-    // --- DETAILED INFO BUTTON ---
-    const detailedInfoBtn = document.getElementById('detailed-info-btn');
-    if (detailedInfoBtn) {
-        detailedInfoBtn.addEventListener('click', () => {
-            const contactSection = document.querySelector('#contact'); // Assuming you have a contact section with this ID
-            if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                // Fallback if contact section doesn't exist
-                alert('İletişim bölümü yakında eklenecektir.');
-            }
+    const aboutModal = document.getElementById('about-modal');
+    const openModalBtn = document.getElementById('detailed-info-btn');
+    const closeModalBtn = document.querySelector('.close-button');
+    const modalContactBtn = document.querySelector('.modal-contact-btn');
+
+    const openModal = () => {
+        if (aboutModal) aboutModal.style.display = 'block';
+    }
+    const closeModal = () => {
+        if (aboutModal) aboutModal.style.display = 'none';
+    }
+
+    if (openModalBtn) openModalBtn.addEventListener('click', openModal);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+
+    if (modalContactBtn) {
+        modalContactBtn.addEventListener('click', (e) => {
+            closeModal();
         });
     }
 
-    // --- MOBILE HAMBURGER MENU ---
+    window.addEventListener('click', (e) => {
+        if (e.target == aboutModal) {
+            closeModal();
+        }
+    });
+
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 

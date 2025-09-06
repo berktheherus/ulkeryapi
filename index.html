@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İnşaat Firması</title>
+    <title>Ülker Yapı - Denizli İnşaat ve Taahhüt Hizmetleri</title>
+    <meta name="description" content="Ülker Yapı, Denizli'de 25 yıllık tecrübesiyle modern ve güvenilir inşaat, taahhüt ve yap-sat projeleri sunar. Kaliteli ve zamanında teslimat için bize ulaşın.">
+    <meta name="keywords" content="inşaat, denizli inşaat, taahhüt, yap-sat, konut projesi, ticari inşaat, ülker yapı, güvenilir inşaat firması">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
     <header class="header">
-        <!-- Top contact bar -->
         <div class="header-top">
             <div class="container">
                 <div class="contact-info">
@@ -45,7 +50,6 @@
             </div>
         </div>
 
-        <!-- Main navigation -->
         <nav class="navbar">
             <div class="container">
                 <div class="nav-brand">
@@ -68,7 +72,6 @@
         </nav>
     </header>
 
-    <!-- Hero Carousel Section -->
     <section id="home" class="hero-carousel">
         <div class="carousel-container">
             <div class="carousel-slides">
@@ -109,7 +112,6 @@
                 </div>
             </div>
 
-            <!-- Navigation Arrows -->
             <button class="carousel-arrow carousel-arrow-left" aria-label="Önceki Slayt">
                 <i class="fas fa-chevron-left"></i>
             </button>
@@ -117,7 +119,6 @@
                 <i class="fas fa-chevron-right"></i>
             </button>
 
-            <!-- Slide Indicators -->
             <div class="carousel-indicators">
                 <button class="indicator active" data-slide-to="0" aria-label="Slayt 1"></button>
                 <button class="indicator" data-slide-to="1" aria-label="Slayt 2"></button>
@@ -126,7 +127,6 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
     <section id="about" class="about-section">
         <div class="container">
             <div class="about-content">
@@ -142,7 +142,6 @@
                         <p>Müşteri memnuniyetini ön planda tutan yaklaşımımız, zamanında teslimat garantimiz ve rekabetçi fiyat politikamızla tercih edilen inşaat firması olmayı başardık.</p>
                     </div>
 
-                    <!-- Action Boxes Below Description -->
                     <div class="action-boxes">
                         <div class="info-button-container">
                             <button class="elegant-info-btn" id="detailed-info-btn">
@@ -156,7 +155,7 @@
 
                 <div class="about-image">
                     <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mühendislik ve Planlama">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ülker Yapı tarafından tamamlanmış modern bir bina projesi">
                         <div class="image-overlay">
                             <div class="experience-badge">
                                 <span class="experience-number">25+</span>
@@ -169,11 +168,10 @@
         </div>
     </section>
 
-    <!-- Services Banner Section -->
     <section id="services" class="services-banner">
         <div class="services-banner-container">
             <div class="services-banner-image">
-                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=400" alt="Our Services">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=400" alt="İnşaat sahasında çalışan mühendisler ve işçiler">
                 <div class="services-banner-overlay">
                     <div class="container">
                         <div class="services-banner-content">
@@ -186,13 +184,12 @@
         </div>
     </section>
 
-    <!-- Services Boxes Section -->
     <section class="services-boxes">
         <div class="container">
             <div class="services-grid">
                 <div class="service-box animate-on-scroll">
                     <div class="service-icon">
-                        <i class="fas fa-industry"></i>  <!-- veya Pro versiyonda: "fas fa-crane" -->
+                        <i class="fas fa-industry"></i>
                     </div>
                     <div class="service-content">
                         <h3>Taahhüt ve İnşaat Hizmetleri</h3>
@@ -213,7 +210,6 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
     <section id="stats" class="stats-section" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
         <div class="stats-overlay"></div>
         <div class="container">
@@ -253,17 +249,14 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-header animate-on-scroll" style="text-align: center;">
                 <span class="section-subtitle">Bize Ulaşın</span>
-                <h2 class="section-title">İletişime Geçin</h2>
                 <p class="section-description">Projeniz hakkında konuşmak veya hizmetlerimizle ilgili daha fazla bilgi almak için aşağıdaki formu doldurabilir veya iletişim bilgilerimizden bize ulaşabilirsiniz.</p>
             </div>
 
             <div class="contact-grid">
-                <!-- Contact Info -->
                 <div class="contact-details animate-on-scroll">
                     <div class="contact-info-item">
                         <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -288,39 +281,59 @@
                     </div>
                 </div>
 
-                <!-- Contact Form -->
                 <form class="contact-form animate-on-scroll" data-delay="200">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name"><i class="fas fa-user"></i></label>
-                            <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
+                            <input type="text" id="name" name="name" placeholder="Ad ve soyadı:" required>
                         </div>
                         <div class="form-group">
                             <label for="email"><i class="fas fa-envelope"></i></label>
-                            <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" required>
+                            <input type="email" id="email" name="email" placeholder="E-posta:" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="subject"><i class="fas fa-pencil-alt"></i></label>
-                        <input type="text" id="subject" name="subject" placeholder="Konu" required>
+                        <input type="text" id="subject" name="subject" placeholder="Konu:" required>
                     </div>
                     <div class="form-group">
                         <label for="message" class="align-top"><i class="fas fa-comment-dots"></i></label>
-                        <textarea id="message" name="message" placeholder="Mesajınız" rows="6" required></textarea>
+                        <textarea id="message" name="message" placeholder="Mesajınız:" rows="6" required></textarea>
                     </div>
-                    <button type="submit" class="cta-button">Mesajı Gönder</button>
+                    <button type="submit" class="cta-button">Gönder</button>
                 </form>
             </div>
         </div>
-        <!-- Google Maps Embed -->
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555996537!2d29.00976019628905!3d37.7833333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c76d445bcf53d7%3A0x2f7a33345a3348a3!2sDenizli!5e0!3m2!1str!2str!4v1699999999999!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
-    <!-- Main content will go here -->
     <main>
-        <!-- Content sections will be added in next steps -->
+        <div id="about-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div class="modal-header">
+                    <h2>Ülker Yapı Hakkında</h2>
+                </div>
+                <div class="modal-body">
+                    <p><strong>1998'den Gelen Güven:</strong> 25 yılı aşkın süredir inşaat sektöründe, yenilikçi ve güvenilir çözümlerle hizmet veriyoruz. Ülker Yapı olarak, Denizli ve çevresinde sayısız konut, ticari ve endüstriyel projeye imza attık.</p>
+                    <p><strong>Misyonumuz:</strong> Müşterilerimizin hayallerini, modern mimari, üstün mühendislik ve kaliteli malzeme ile gerçeğe dönüştürmek. Her projemizde estetik, fonksiyonellik ve güvenliği bir araya getiriyoruz.</p>
+                    <p><strong>Vizyonumuz:</strong> Sektörde sadece bir inşaat firması değil, aynı zamanda çevreye duyarlı, sürdürülebilir ve teknoloji odaklı bir "yaşam alanı geliştiricisi" olarak anılmak.</p>
+                    <h4>Değerlerimiz</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Müşteri Memnuniyeti</li>
+                        <li><i class="fas fa-check-circle"></i> Kalite ve Mükemmellik</li>
+                        <li><i class="fas fa-check-circle"></i> Şeffaflık ve Dürüstlük</li>
+                        <li><i class="fas fa-check-circle"></i> Zamanında Teslimat</li>
+                        <li><i class="fas fa-check-circle"></i> İş Güvenliği</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="#contact" class="cta-button modal-contact-btn">Projeniz İçin Bize Ulaşın</a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script src="script.js"></script>
