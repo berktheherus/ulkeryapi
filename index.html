@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnşaat Firması</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <!-- Top contact bar -->
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+90 (212) 555 0123</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@eposta.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Denizli, Türkiye</span>
+                    </div>
+                </div>
+                
+                <div class="social-media">
+                    <a href="#" class="social-link" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>Ülker Yapı</h1>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Ana Sayfa</a></li>
+                    <li><a href="#about" class="nav-link">Hakkımızda</a></li>
+                    <li><a href="#services" class="nav-link">Hizmetler</a></li>
+                    <li><a href="#contact" class="nav-link">İletişim</a></li>
+                </ul>
+
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Carousel Section -->
+    <section id="home" class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                    <div class="slide-overlay">
+                        <div class="container">
+                            <div class="slide-content">
+                                <h2>Modern İnşaat Çözümleri</h2>
+                                <p>25 yıllık deneyimimizle, kaliteli ve güvenilir inşaat hizmetleri sunuyoruz. Hayalinizdeki yapıyı gerçeğe dönüştürüyoruz.</p>
+                                <a href="#services" class="cta-button">Hizmetlerimizi Keşfedin</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                    <div class="slide-overlay">
+                        <div class="container">
+                            <div class="slide-content">
+                                <h2>Profesyonel Ekip</h2>
+                                <p>Uzman mühendis ve teknik kadromuzla, projelerinizi en yüksek kalite standartlarında tamamlıyoruz.</p>
+                                <a href="#about" class="cta-button">Hakkımızda</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1590725121839-892b458a74fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                    <div class="slide-overlay">
+                        <div class="container">
+                            <div class="slide-content">
+                                <h2>Güvenli İnşaat</h2>
+                                <p>İş güvenliği önceliğimiz. Tüm projelerimizde en yüksek güvenlik standartlarını uyguluyoruz.</p>
+                                <a href="#contact" class="cta-button">İletişime Geçin</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="carousel-arrow carousel-arrow-left" aria-label="Önceki Slayt">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-arrow carousel-arrow-right" aria-label="Sonraki Slayt">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Slide Indicators -->
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide-to="0" aria-label="Slayt 1"></button>
+                <button class="indicator" data-slide-to="1" aria-label="Slayt 2"></button>
+                <button class="indicator" data-slide-to="2" aria-label="Slayt 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-header" style="text-align: center;">
+                        <span class="section-subtitle animate-on-scroll">Hakkımızda</span>
+                        <h2 class="section-title">25 Yıllık Deneyim ile Güvenilir İnşaat</h2>
+                    </div>
+                    
+                    <div class="about-description">
+                        <p>1998 yılından bu yana inşaat sektöründe faaliyet gösteren firmamız, kaliteli ve güvenilir hizmet anlayışımızla sektörde öncü konumdadır. Uzman kadromuz ve modern ekipmanlarımızla, konut, ticari ve endüstriyel projelerinizi en yüksek standartlarda tamamlıyoruz.</p>
+                        
+                        <p>Müşteri memnuniyetini ön planda tutan yaklaşımımız, zamanında teslimat garantimiz ve rekabetçi fiyat politikamızla tercih edilen inşaat firması olmayı başardık.</p>
+                    </div>
+
+                    <!-- Action Boxes Below Description -->
+                    <div class="action-boxes">
+                        <div class="info-button-container">
+                            <button class="elegant-info-btn" id="detailed-info-btn">
+                                <i class="fas fa-info-circle"></i>
+                                <span>DETAYLI BİLGİ</span>
+                                <i class="fas fa-arrow-right arrow-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mühendislik ve Planlama">
+                        <div class="image-overlay">
+                            <div class="experience-badge">
+                                <span class="experience-number">25+</span>
+                                <span class="experience-text">Yıllık Deneyim</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Banner Section -->
+    <section id="services" class="services-banner">
+        <div class="services-banner-container">
+            <div class="services-banner-image">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=400" alt="Our Services">
+                <div class="services-banner-overlay">
+                    <div class="container">
+                        <div class="services-banner-content">
+                            <h2 class="animate-on-scroll">Ne hizmetleri sunmaktayız?</h2>
+                            <p>Çevre dostu ve sürdürülebilir çözümler geliştirerek, geleceğin yaşam alanlarını bugünden inşa ediyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Boxes Section -->
+    <section class="services-boxes">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-box animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>  <!-- veya Pro versiyonda: "fas fa-crane" -->
+                    </div>
+                    <div class="service-content">
+                        <h3>Taahhüt ve İnşaat Hizmetleri</h3>
+                        <p>Konut, ticari ve endüstriyel yapıların inşaatında uzman ekibimizle, projelerinizi baştan sona yönetiyoruz. Kaliteli malzeme, deneyimli işçilik ve zamanında teslimat garantisi ile hizmet veriyoruz.</p>
+                    </div>
+                </div>
+                
+                <div class="service-box animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Yap-Al Sat Projesi</h3>
+                        <p>Modern yaşam alanları tasarlayıp inşa ediyor, müşterilerimize hazır konutlar sunuyoruz. Şehrin en değerli lokasyonlarında, konforlu ve estetik projeler geliştiriyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats-section" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="stats-overlay"></div>
+        <div class="container">
+            <div class="section-header animate-on-scroll" style="text-align: center;">
+                <h2 class="section-title">Rakamlarla Biz</h2>
+                <p class="stats-subtitle">Yılların deneyimi ve müşteri memnuniyeti ile sektörde fark yaratan başarılarımız</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item animate-on-scroll">
+                    <div class="stat-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="stat-number">
+                        <span class="counter" data-target="100">0</span>+
+                    </div>
+                    <p>Tamamlanmış Proje</p>
+                </div>
+                <div class="stat-item animate-on-scroll" data-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-number">
+                        <span class="counter" data-target="9">0</span>/10
+                    </div>
+                    <p>Müşteri Değerlendirmesi</p>
+                </div>
+                <div class="stat-item animate-on-scroll" data-delay="400">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-number">
+                        +<span class="counter" data-target="25">0</span>
+                    </div>
+                    <p>Yıllık Deneyim</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll" style="text-align: center;">
+                <span class="section-subtitle">Bize Ulaşın</span>
+                <h2 class="section-title">İletişime Geçin</h2>
+                <p class="section-description">Projeniz hakkında konuşmak veya hizmetlerimizle ilgili daha fazla bilgi almak için aşağıdaki formu doldurabilir veya iletişim bilgilerimizden bize ulaşabilirsiniz.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-details animate-on-scroll">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-info-text">
+                            <h4>Adres</h4>
+                            <p>Örnek Mah. İnşaat Cad. No:123, 20000 Denizli, Türkiye</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-info-text">
+                            <h4>Telefon</h4>
+                            <p>+90 (212) 555 0123</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-info-text">
+                            <h4>E-posta</h4>
+                            <p>info@ulkeryapi.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="contact-form animate-on-scroll" data-delay="200">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i></label>
+                            <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i></label>
+                            <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject"><i class="fas fa-pencil-alt"></i></label>
+                        <input type="text" id="subject" name="subject" placeholder="Konu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="align-top"><i class="fas fa-comment-dots"></i></label>
+                        <textarea id="message" name="message" placeholder="Mesajınız" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Mesajı Gönder</button>
+                </form>
+            </div>
+        </div>
+        <!-- Google Maps Embed -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555996537!2d29.00976019628905!3d37.7833333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c76d445bcf53d7%3A0x2f7a33345a3348a3!2sDenizli!5e0!3m2!1str!2str!4v1699999999999!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Main content will go here -->
+    <main>
+        <!-- Content sections will be added in next steps -->
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
