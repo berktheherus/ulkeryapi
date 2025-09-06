@@ -1,3 +1,12 @@
+// --- PRELOADER ---
+const preloader = document.getElementById('preloader');
+window.addEventListener('load', () => {
+    if (preloader) {
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- DYNAMIC HEADER ---
     const header = document.querySelector('.header');
@@ -23,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (lastActiveSlide) {
                 lastActiveSlide.classList.remove('active');
             }
-            
+
             slides.forEach(slide => slide.classList.remove('prev'));
             if (lastActiveSlide) {
                 lastActiveSlide.classList.add('prev');
@@ -86,6 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
+
+            // Special handling for modal contact button
+            if (this.classList.contains('modal-contact-btn')) {
+                // The modal logic will handle closing and then this can scroll
+                // This is a backup in case the primary logic fails
+            }
+
             if (targetElement) {
                 const headerOffset = document.querySelector('.header').offsetHeight;
                 const elementPosition = targetElement.getBoundingClientRect().top;
@@ -155,19 +171,34 @@ document.addEventListener('DOMContentLoaded', () => {
         statsObserver.observe(statsSection);
     }
 
-    // --- DETAILED INFO BUTTON ---
-    const detailedInfoBtn = document.getElementById('detailed-info-btn');
-    if (detailedInfoBtn) {
-        detailedInfoBtn.addEventListener('click', () => {
-            const contactSection = document.querySelector('#contact'); // Assuming you have a contact section with this ID
-            if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                // Fallback if contact section doesn't exist
-                alert('İletişim bölümü yakında eklenecektir.');
-            }
+    // --- ABOUT US MODAL ---
+    const aboutModal = document.getElementById('about-modal');
+    const openModalBtn = document.getElementById('detailed-info-btn');
+    const closeModalBtn = document.querySelector('.close-button');
+    const modalContactBtn = document.querySelector('.modal-contact-btn');
+
+    const openModal = () => {
+        if (aboutModal) aboutModal.style.display = 'block';
+    }
+    const closeModal = () => {
+        if (aboutModal) aboutModal.style.display = 'none';
+    }
+
+    if (openModalBtn) openModalBtn.addEventListener('click', openModal);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+
+    if (modalContactBtn) {
+        modalContactBtn.addEventListener('click', (e) => {
+            // We let the smooth scroll handler do its job, but we must close the modal first.
+            closeModal();
         });
     }
+
+    window.addEventListener('click', (e) => {
+        if (e.target == aboutModal) {
+            closeModal();
+        }
+    });
 
     // --- MOBILE HAMBURGER MENU ---
     const hamburger = document.querySelector('.hamburger');
@@ -181,6 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
+                // We don't prevent default here because the smooth scroll handler needs it.
+                // We just close the menu.
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             });

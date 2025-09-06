@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İnşaat Firması</title>
+    <title>Ülker Yapı - Denizli İnşaat ve Taahhüt Hizmetleri</title>
+    <meta name="description" content="Ülker Yapı, Denizli'de 25 yıllık tecrübesiyle modern ve güvenilir inşaat, taahhüt ve yap-sat projeleri sunar. Kaliteli ve zamanında teslimat için bize ulaşın.">
+    <meta name="keywords" content="inşaat, denizli inşaat, taahhüt, yap-sat, konut projesi, ticari inşaat, ülker yapı, güvenilir inşaat firması">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
     <header class="header">
         <!-- Top contact bar -->
         <div class="header-top">
@@ -156,7 +163,7 @@
 
                 <div class="about-image">
                     <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mühendislik ve Planlama">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ülker Yapı tarafından tamamlanmış modern bir bina projesi">
                         <div class="image-overlay">
                             <div class="experience-badge">
                                 <span class="experience-number">25+</span>
@@ -173,7 +180,7 @@
     <section id="services" class="services-banner">
         <div class="services-banner-container">
             <div class="services-banner-image">
-                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=400" alt="Our Services">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=400" alt="İnşaat sahasında çalışan mühendisler ve işçiler">
                 <div class="services-banner-overlay">
                     <div class="container">
                         <div class="services-banner-content">
@@ -320,7 +327,31 @@
 
     <!-- Main content will go here -->
     <main>
-        <!-- Content sections will be added in next steps -->
+        <!-- About Us Modal -->
+        <div id="about-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div class="modal-header">
+                    <h2>Ülker Yapı Hakkında</h2>
+                </div>
+                <div class="modal-body">
+                    <p><strong>1998'den Gelen Güven:</strong> 25 yılı aşkın süredir inşaat sektöründe, yenilikçi ve güvenilir çözümlerle hizmet veriyoruz. Ülker Yapı olarak, Denizli ve çevresinde sayısız konut, ticari ve endüstriyel projeye imza attık.</p>
+                    <p><strong>Misyonumuz:</strong> Müşterilerimizin hayallerini, modern mimari, üstün mühendislik ve kaliteli malzeme ile gerçeğe dönüştürmek. Her projemizde estetik, fonksiyonellik ve güvenliği bir araya getiriyoruz.</p>
+                    <p><strong>Vizyonumuz:</strong> Sektörde sadece bir inşaat firması değil, aynı zamanda çevreye duyarlı, sürdürülebilir ve teknoloji odaklı bir "yaşam alanı geliştiricisi" olarak anılmak.</p>
+                    <h4>Değerlerimiz</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Müşteri Memnuniyeti</li>
+                        <li><i class="fas fa-check-circle"></i> Kalite ve Mükemmellik</li>
+                        <li><i class="fas fa-check-circle"></i> Şeffaflık ve Dürüstlük</li>
+                        <li><i class="fas fa-check-circle"></i> Zamanında Teslimat</li>
+                        <li><i class="fas fa-check-circle"></i> İş Güvenliği</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="#contact" class="cta-button modal-contact-btn">Projeniz İçin Bize Ulaşın</a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script src="script.js"></script>

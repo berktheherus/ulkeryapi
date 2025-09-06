@@ -294,7 +294,7 @@ body {
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.4s ease;
-    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+    box-shadow: 0 4px 15px rgba(179, 143, 41, 0.2);
     position: relative;
     overflow: hidden;
 }
@@ -306,8 +306,8 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 0.6s ease;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .cta-button:hover::before {
@@ -392,14 +392,28 @@ body {
 }
 
 .about-section::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(179, 143, 41, 0.03) 0%, rgba(255, 255, 255, 0.05) 100%); /* Darker Gold */
+    background: linear-gradient(
+        115deg,
+        transparent 45%,
+        rgba(179, 143, 41, 0.04) 50%,
+        transparent 55%
+    );
     z-index: 1;
-    transition: width 1s ease; content: '';
+    animation: shimmer 15s infinite linear;
+    background-size: 200% 100%;
+    background-position: 200% 0;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: -200% 0;
+    }
 }
 
 .about-content {
@@ -556,8 +570,8 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    position: relative; 
-    overflow: hidden;    
+    position: relative;
+    overflow: hidden;
     box-shadow: none;
 }
 
@@ -609,14 +623,14 @@ contact-content,
 .services-banner {
     width: 100%;
     position: relative;
-    overflow: hidden;    
+    overflow: hidden;
     background: #2c3e50; /* Darker gradient */
 }
 
 .services-banner::before {
     content: '';
     position: absolute;
-    top: 0;    
+    top: 0;
     left: 0;
     width: 100%;
     height: 4px;
@@ -671,7 +685,7 @@ contact-content,
 .services-banner-content {
     color: white;
     max-width: 800px;
-    padding: 0 20px;    
+    padding: 0 20px;
     text-align: center;
 }
 
@@ -864,7 +878,7 @@ contact-content,
     justify-content: center;
     font-size: 32px;
     color: white;
-    margin: 0 auto 25px; 
+    margin: 0 auto 25px;
     background: linear-gradient(135deg, #b38f29, #a17f25); /* Darker Gold gradient */
     box-shadow: 0 8px 25px rgba(179, 143, 41, 0.3); /* Darker Gold Shadow */
     transition: all 0.4s ease;
@@ -1032,7 +1046,7 @@ contact-content,
 }
 
 .contact-grid {
-    display: grid;    
+    display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 60px;
     margin-bottom: 100px;
@@ -1114,7 +1128,7 @@ contact-content,
 
 .form-group:focus-within {
     border-color: #b38f29; /* Darker Gold */
-    box-shadow: 0 0 0 3px rgba(179, 143, 41, 0.2); /* Darker Gold Shadow */
+    box-shadow: 0 0 0 4px rgba(179, 143, 41, 0.15); /* Darker Gold Shadow */
 }
 
 .form-group label {
@@ -1191,33 +1205,33 @@ contact-content,
     .slide-content h2 {
         font-size: 1.5rem;
     }
-    
+
     .slide-content p {
         font-size: 0.8rem;
     }
-    
+
     .section-title {
         font-size: 1.4rem;
     }
-    
+
     .services-banner-content h2 {
         font-size: 1.2rem;
         line-height: 1.1;
     }
-    
+
     .services-banner-content p {
         font-size: 0.75rem;
         line-height: 1.2;
     }
-    
+
     .service-content h3 {
         font-size: 16px;
     }
-    
+
     .service-content p {
         font-size: 12px;
     }
-    
+
     .services-banner-container {
         height: 200px;
     }
@@ -1394,5 +1408,160 @@ contact-content,
 
     .section-title {
         font-size: 2rem;
+    }
+}
+
+/* --- Preloader Styles --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #f9f7f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(44, 62, 80, 0.2);
+    border-top-color: #b38f29;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Modal Styles --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 30px 40px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    animation: slideDown 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #b38f29;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.modal-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.modal-body p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.modal-body h4 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.modal-body ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.modal-body ul li {
+    margin-bottom: 10px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.modal-body ul li i {
+    color: #b38f29;
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.modal-footer {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.modal-contact-btn {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin: 15% auto;
+        padding: 25px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .modal-body p, .modal-body ul li {
+        font-size: 0.95rem;
     }
 }
