@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 message: this.querySelector('#message').value,
             };
 
-            fetch('api/index.php', {
+            fetch('api/index', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
