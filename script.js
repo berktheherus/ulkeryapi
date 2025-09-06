@@ -203,4 +203,64 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Sending...';
+
+            // Create a message element if it doesn't exist
+            let formMessage = this.querySelector('.form-message');
+            if (!formMessage) {
+                formMessage = document.createElement('p');
+                formMessage.className = 'form-message';
+                this.appendChild(formMessage);
+            }
+            formMessage.style.display = 'none';
+
+            const formData = {
+                name: this.querySelector('#name').value,
+                email: this.querySelector('#email').value,
+                subject: this.querySelector('#subject').value,
+                message: this.querySelector('#message').value,
+            };
+
+            fetch('api/index.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                formMessage.style.display = 'block';
+                if (data.status === 'success') {
+                    formMessage.textContent = data.message;
+                    formMessage.style.color = '#28a745'; // Green for success
+                    contactForm.reset();
+                } else {
+                    formMessage.textContent = data.message || 'An error occurred.';
+                    formMessage.style.color = '#dc3545'; // Red for error
+                }
+            })
+            .catch(error => {
+                formMessage.style.display = 'block';
+                formMessage.textContent = 'A network error occurred. Please try again.';
+                formMessage.style.color = '#dc3545';
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000); // Hide message after 5 seconds
+            });
+        });
+    }
 });
