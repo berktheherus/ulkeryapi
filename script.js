@@ -214,7 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
             submitButton.disabled = true;
             submitButton.innerHTML = 'Sending...';
 
-            // Create a message element if it doesn't exist
             let formMessage = this.querySelector('.form-message');
             if (!formMessage) {
                 formMessage = document.createElement('p');
@@ -230,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 message: this.querySelector('#message').value,
             };
 
-            fetch('api/index', {
+            fetch('api/index.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -242,11 +241,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 formMessage.style.display = 'block';
                 if (data.status === 'success') {
                     formMessage.textContent = data.message;
-                    formMessage.style.color = '#28a745'; // Green for success
+                    formMessage.style.color = '#28a745';
                     contactForm.reset();
                 } else {
                     formMessage.textContent = data.message || 'An error occurred.';
-                    formMessage.style.color = '#dc3545'; // Red for error
+                    formMessage.style.color = '#dc3545';
                 }
             })
             .catch(error => {
@@ -259,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitButton.innerHTML = originalButtonText;
                 setTimeout(() => {
                     formMessage.style.display = 'none';
-                }, 5000); // Hide message after 5 seconds
+                }, 5000);
             });
         });
     }

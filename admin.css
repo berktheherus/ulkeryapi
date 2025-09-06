@@ -1,6 +1,8 @@
-/* Admin page specific styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 body {
     background-color: #f9f7f3;
+    font-family: 'Poppins', sans-serif;
 }
 
 .admin-main {
@@ -13,7 +15,8 @@ body {
 }
 
 .messages-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
     font-size: 2.5rem;
     color: #2c3e50;
     margin-bottom: 10px;
@@ -79,7 +82,7 @@ body {
     font-size: 1rem;
     line-height: 1.7;
     color: #495057;
-    white-space: pre-wrap; /* preserves whitespace and newlines */
+    white-space: pre-wrap;
 }
 
 .no-messages {
@@ -95,7 +98,6 @@ body {
     color: #6c757d;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .admin-main {
         padding: 40px 0;

@@ -1,18 +1,16 @@
 <?php
 session_start();
 
-// If the user is already logged in, redirect to the admin page
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     header('Location: admin.php');
     exit;
 }
 
 $error_message = '';
-$password = 'test'; // The password
+$password = 'test';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['password']) && $_POST['password'] === $password) {
-        // Password is correct, start the session
         $_SESSION['loggedin'] = true;
         header('Location: admin.php');
         exit;
@@ -27,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login - Ülker Yapı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -36,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             height: 100vh;
             background-color: #f9f7f3;
             margin: 0;
+            font-family: 'Poppins', sans-serif;
         }
         .login-container {
             background: #ffffff;
@@ -47,7 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             text-align: center;
         }
         .login-container h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
             color: #b38f29;
             margin-bottom: 20px;
         }
